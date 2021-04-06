@@ -1,73 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Personal</title>
-    <link rel="stylesheet" href="../../Resources/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="../../Resources/css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="../../Resources/css/bootstrap.css">
-    <link rel="stylesheet" href="../../Resources/css/index.css">
-    <link rel="stylesheet" href="../../Resources/css/toastr.min.css">
-</head>
-
-<body onLoad="llenarTablaContactos()">
-
-    <main class="container mt-3">
-
-        <h1 class="text-center mb-3"><b>Agenda Personal</b></h1>
-        <section class="row">
-            <div class="col-sm-5 cajaContacto p-4">
-
-                <form name="frmContacto" method="POST" action="../Servidor/index.php">
-                    <div class="form-group">
-                        <label for="txtNombre">Nombre: </label>
-                        <input type="text" name="txtNombre" id=txt-Nombre class="form-control"
-                            placeholder="Ingresa tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtNombre">Telefono Fijo: </label>
-                        <input type="text" name="txtTelFijo" id=txt-TelFijo class="form-control"
-                            placeholder="Ingresa tu Telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtNombre">Telefono Celular: </label>
-                        <input type="text" name="txtTelCel" id=txt-TelCel class="form-control"
-                            placeholder="Ingresa tu Celular">
-                    </div>
-                    <a onclick="registrarContacto()" class="btn btn-info btn-block">Agregar contacto</a>
-                </form>
-            </div>
-
-            <div class="col-md-7">
-                <div class="table-responsive">
-
-                    <table class="table table.bordered table-hover">
-                        <thead class="thead-dark text-center">
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Telefono fijo</th>
-                                <th>Telefono celular</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tablaContactos" style="background-color: white;">
-                        </tbody>
-                    </table>
+<main class="container mt-3">
+    <h1 class="text-center mb-3"><b>Agenda Personal</b></h1>
+    <section class="row">
+        <div class="col-sm-5 cajaContacto p-4">
+            <form name="frmContacto" method="POST" action="../servidor/index.php">
+                <div class="form-group">
+                    <label for="txtNombre">Nombre: </label>
+                    <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="Ingrese nombre">
                 </div>
+                  
+                <div class="form-group">
+                    <label for="txtNombre">Teléfono Fijo: </label>
+                    <input type="text" name="txtTelFijo" id="txtTelFijo" class="form-control" placeholder="Ingrese teléfono fijo">
+                </div>
+            
+                <div class="form-group">
+                    <label for="txtNombre">Teléfono Celular: </label>
+                    <input type="text" name="txtTelCel" id="txtTelCel" class="form-control" placeholder="Ingrese teléfono celular"> 
+                </div>
+  
+                <!-- <input type="submit" class="btn btn-info btn-block" value="Agregar contacto">-->
+                <a onclick="registrarContacto()" class="btn btn-info btn-block">Agregar Contacto</a>
+  
+            </form>
+        </div>
+        <div class="col-sm-7">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono Fijo</th>
+                            <th>Teléfono Celular</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaContactos" style="background-color: white;">
+  
+                    </tbody>
+                </table>
             </div>
-
-        </section>
-
-    </main>
-
-
-    <script src="../../Resources/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-    <script type="text/javascript" src="../../Resources/js/index.js"></script>
-
-</body>
-
-</html>
+        </div>
+    </section>  
+</main>
